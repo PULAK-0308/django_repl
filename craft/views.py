@@ -59,15 +59,15 @@ def signup(request):
         email_subject="Activate Your Account"
         message=render_to_string('activate.html',{
             'user':user,
-            'domain':'127.0.0.1:8000',
+            'domain':'https://craft--pulak-0308.repl.co',
             'uid':urlsafe_base64_encode(force_bytes(user.pk)),
             'token':generate_token.make_token(user)
 
         })
 
-        # email_message = EmailMessage(email_subject,message,settings.EMAIL_HOST_USER,[email])
-        # email_message.send()
-        messages.success(request,f"Activate Your Account by clicking the link in your gmail {message}")
+        email_message = EmailMessage(email_subject,message,settings.EMAIL_HOST_USER,[email])
+        email_message.send()
+        # messages.success(request,f"Activate Your Account by clicking the link in your gmail {message}")
         return redirect('login')
     return render(request,"signup.html")
 
@@ -127,7 +127,7 @@ class RequestResetEmailView(View):
             # current_site=get_current_site(request)
             email_subject='[Reset Your Password]'
             message=render_to_string('reset-user-password.html',{
-                'domain':'127.0.0.1:8000',
+                'domain':'https://craft--pulak-0308.repl.co',
                 'uid':urlsafe_base64_encode(force_bytes(user[0].pk)),
                 'token':PasswordResetTokenGenerator().make_token(user[0])
             })
@@ -237,7 +237,7 @@ def checkout(request):
 
         amount=int(amount)*100
         client = razorpay.Client(auth=(keyid,keySecret))
-        callback_url='http://127.0.0.1:8000/handlerequest'
+        callback_url='https://craft--pulak-0308.repl.co/handlerequest'
 
         data = { "amount":amount, "currency": "INR", "receipt": str(Order.order_id),
                 "notes":{
