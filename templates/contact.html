@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    {%load static%}
+    <title>Dreamcatchers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-image: url('{%static "peach.jpg"%}');
+            background-size: cover;
+
+        }
+
+        .he {
+            margin-top: -10px;
+            width: 1700px;
+            height: 300px;
+
+        }
+
+        .container {
+          max-width: 2100px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+
+        }
+
+        h1 {
+            text-align: center;
+        }        
+
+        .navbar {
+            background-color: rgb(255, 79, 188);
+            border-radius: 13px;
+            margin-top: 3px;
+            height:90px;  
+        }
+
+        .navbar ul {
+            overflow: auto;
+            margin-left: 40px;
+            font-size: 30px;
+            font-family: cursive;
+        }
+
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 13px 20ox;
+            padding-top: 20px;
+        }
+        
+        .navbar li a {
+            padding-top: 20px;
+            text-decoration: none;
+            color: white;
+            margin: 13px;
+            
+        }
+        .navbar li a:hover {
+            color: red;
+        }
+    
+
+        .navbar input {
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 4px 17px;
+            width: 129px;
+        }
+
+        .logo {
+            margin-left: -30px;
+            margin-top: -15px;
+            width: 70px;
+        }
+
+        @media only screen and (max-width: 1440px){
+            .he {
+                margin-top: -10px;
+                width: 1250px;
+                height: 300px;
+    
+            }
+    
+            .container {
+                width: 1250px;
+                margin: 0 auto;
+                padding: 20px;
+                border-radius: 5px;
+                
+    
+            }
+    
+            h1 {
+                text-align: center;
+            }        
+    
+            .navbar {
+                background-color: rgb(255, 79, 188);
+                border-radius: 13px;
+                margin-top: 3px;
+                height:90px;  
+                width:1270px;
+            }
+    
+            .navbar ul {
+                overflow: auto;
+                margin-left: 40px;
+                font-size: 30px;
+                font-family: cursive;
+            }
+    
+    
+            .navbar li {
+                float: left;
+                list-style: none;
+                margin: 13px 20ox;
+                padding-top: 20px;
+            }
+            
+            .navbar li a {
+                padding-top: 20px;
+                text-decoration: none;
+                color: white;
+                margin: 13px;
+                
+            }
+            .navbar li a:hover {
+                color: red;
+            }
+        
+    
+            .navbar input {
+                border: 2px solid black;
+                border-radius: 14px;
+                padding: 4px 17px;
+                width: 129px;
+            }
+    
+            .logo {
+                margin-left: -30px;
+                margin-top: -15px;
+                width: 70px;
+            }
+
+        }
+ 
+
+        .cartlist {
+            margin-left: 1450px;
+            color: red;
+            font-size: 20px;
+        }
+
+        .clearcart {
+
+            color: black;
+            font-size: 18px;
+            margin-top: 8px;
+        }
+        @media only screen and (max-width: 1440px){
+            .cartlist {
+                margin-left: 1050px;
+                color: red;
+                font-size: 20px;
+            }
+    
+            .clearcart {
+    
+                color: black;
+                font-size: 18px;
+                margin-top: 8px;
+            }
+        }
+
+        .checkoutlist {
+
+            color: black;
+            font-size: 18px;
+            margin-top: 8px;
+        }
+
+        .cart {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: blue;
+        }
+
+        .quickview {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: blue;
+        }
+
+
+
+        .b1 {
+            width: 200px;
+            margin-left: -300px;
+            padding: 12px;
+            margin-top: 7px;
+            border-radius: 15px;
+            color: #111110;
+            text-align: center;
+            font-weight: bolder;
+            background-color: rgb(16, 245, 8);
+        }
+
+        .b1:hover {
+            cursor: pointer;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    {%load static%}
+    <title>Dreamcatchers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-image: url('{%static "peach.jpg"%}');
+            background-size: cover;
+
+        }
+
+        .he {
+            margin-top: -10px;
+            width: 1700px;
+            height: 300px;
+
+        }
+
+        .container {
+          max-width: 2100px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+
+        }
+
+        h1 {
+            text-align: center;
+        }        
+
+        .navbar {
+            background-color: rgb(255, 79, 188);
+            border-radius: 13px;
+            margin-top: 3px;
+            height:90px;  
+        }
+
+        .navbar ul {
+            overflow: auto;
+            margin-left: 40px;
+            font-size: 30px;
+            font-family: cursive;
+        }
+
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 13px 20ox;
+            padding-top: 20px;
+        }
+        
+        .navbar li a {
+            padding-top: 20px;
+            text-decoration: none;
+            color: white;
+            margin: 13px;
+            
+        }
+        .navbar li a:hover {
+            color: red;
+        }
+    
+
+        .navbar input {
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 4px 17px;
+            width: 129px;
+        }
+
+        .logo {
+            margin-left: -30px;
+            margin-top: -15px;
+            width: 70px;
+        }
+
+        @media only screen and (max-width: 1440px){
+            .he {
+                margin-top: -10px;
+                width: 1250px;
+                height: 300px;
+    
+            }
+    
+            .container {
+                width: 1250px;
+                margin: 0 auto;
+                padding: 20px;
+                border-radius: 5px;
+                
+    
+            }
+    
+            h1 {
+                text-align: center;
+            }        
+    
+            .navbar {
+                background-color: rgb(255, 79, 188);
+                border-radius: 13px;
+                margin-top: 3px;
+                height:90px;  
+                width:1270px;
+            }
+    
+            .navbar ul {
+                overflow: auto;
+                margin-left: 40px;
+                font-size: 30px;
+                font-family: cursive;
+            }
+    
+    
+            .navbar li {
+                float: left;
+                list-style: none;
+                margin: 13px 20ox;
+                padding-top: 20px;
+            }
+            
+            .navbar li a {
+                padding-top: 20px;
+                text-decoration: none;
+                color: white;
+                margin: 13px;
+                
+            }
+            .navbar li a:hover {
+                color: red;
+            }
+        
+    
+            .navbar input {
+                border: 2px solid black;
+                border-radius: 14px;
+                padding: 4px 17px;
+                width: 129px;
+            }
+    
+            .logo {
+                margin-left: -30px;
+                margin-top: -15px;
+                width: 70px;
+            }
+
+        }
+ 
+
+        .cartlist {
+            margin-left: 1450px;
+            color: red;
+            font-size: 20px;
+        }
+
+        .clearcart {
+
+            color: black;
+            font-size: 18px;
+            margin-top: 8px;
+        }
+        @media only screen and (max-width: 1440px){
+            .cartlist {
+                margin-left: 1050px;
+                color: red;
+                font-size: 20px;
+            }
+    
+            .clearcart {
+    
+                color: black;
+                font-size: 18px;
+                margin-top: 8px;
+            }
+        }
+
+        .checkoutlist {
+
+            color: black;
+            font-size: 18px;
+            margin-top: 8px;
+        }
+
+        .cart {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: blue;
+        }
+
+        .quickview {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: blue;
+        }
+
+
+
+        .b1 {
+            width: 200px;
+            margin-left: -300px;
+            padding: 12px;
+            margin-top: 7px;
+            border-radius: 15px;
+            color: #111110;
+            text-align: center;
+            font-weight: bolder;
+            background-color: rgb(16, 245, 8);
+        }
+
+        .b1:hover {
+            cursor: pointer;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><img src='{%static "lcor.jpg" %}' class="logo"></li>
+                <li><a href="mainpage">HOME</a></li>
+                <li><a href="dreamcatchers">Shop</a></li>
+                
+                <li><a href="gallery">GALLERY</a></li>
+                <li><a href="contact">CONTACT US</a> </li>
+                {%if request.user.is_authenticated%}
+                <li><a href="logout" class="logout" type="submit" style="color:black; margin-left:700px; margin-top:-20px;">LOGOUT</a></li>
+                {%endif%}
+
+
+            </ul>
+
+
+
+            <button type="button" font-size="30px" class="cartlist" id="popcart" data-container="body" 
+                data-html="true" data-toggle="popover"
+                 data-placement="bottom" data-content="Bottom popover">
+                 cart(<span id="cart">0</span>)
+                </button>
+
+        </nav>
+
+    </header>
+
+    <div class="he">
+        <h1><img src='{%static "head1.jpg" %}' class="he"> </h1>
+    </div>
+
+    
+      
+      
+          <div class="section-title">
+            <h2></h2>
+            <h3>Contact Page </h3>
+          </div>
+      
+          <div class="container my-3">
+            <h3>Contact Us</h3>
+            <form action="contact" method="post">{% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="name">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="name">Phome</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+                </div>
+        
+                <div class="form-group">
+                    <label for="desc">How May We Help You ?</label>
+                    <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+                </div>
+                <div class="divpr">
+                    <button type="submit"  id="para" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        
+                
+            </div>
+                
+                {% block js %}
+                <script>
+                  {% if thank %}
+                   alert("Your form submitted successfully");
+                   document.location="contact";
+                   {% endif %}
+                {%endblock%}
+                </script>
+                
+        
+            
+
+</body>
+
+</html>
